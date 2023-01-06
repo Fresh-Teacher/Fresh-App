@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/swipeRefresh"
+        android:background="@color/app_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/splash" />
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/layout_net_connection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color"
+        >
+
+        <ImageView
+            android:id="@+id/image_wifi"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/no_internet"
+            android:src="@drawable/ic_baseline_wifi_off_24" />
+
+        <TextView
+            android:id="@+id/no_internet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/not_available_net"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="center"
+            android:text="YOU ARE OFFLINE!"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/not_available_net"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="The Fresh App is currently offline! Please connect to the internet to continue..."
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:onClick="tryAgainClick"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/try_again"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/not_available_net"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_for_btn"
+            android:text="Retry"
+            android:textColor="@color/app_color"
+            android:textAllCaps="false"
+            />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
