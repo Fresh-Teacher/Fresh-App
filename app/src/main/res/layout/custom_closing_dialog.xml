@@ -39,7 +39,7 @@
         android:layout_marginLeft="@dimen/margin_8"
         android:layout_marginTop="@dimen/margin_6"
         android:layout_toLeftOf="@+id/body"
-        android:src="@drawable/splash" />
+        android:src="@mipmap/ic_launcher" />
 
 
     <TextView
